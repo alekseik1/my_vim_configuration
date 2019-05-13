@@ -9,7 +9,7 @@ snippet beg "begin{} / end{}" b
 endsnippet
 
 snippet im "Math" w
-$ ${1} $ $2
+$${1}$ $0
 endsnippet
 
 snippet dm "Display math" w
@@ -31,24 +31,36 @@ snippet '([A-Za-z])_{(\d\d)}(\d)' "auto subscript2 a123 -> a_{123}" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = str(match.group(2)) + str(match.group(3))`}
 endsnippet
 
-snippet sr "^2" i
+snippet sr "^2" iA
 ^2
 endsnippet
 
-snippet cb "^3" i
+snippet cb "^3" iA
 ^3
 endsnippet
 
-snippet	td "superscript" iA
-^{$1} $0
+snippet	tu "superscript" iA
+^{$1}$0
+endsnippet
+
+snippet td "underscript" iA
+_{$1}$0
+endsnippet
+
+snippet mcal "mathcal" iA
+\mathcal{$1}$0
 endsnippet
 
 snippet // "Fraction" iA
-\\cfrac{$1}{$2} $0
+\\cfrac{$1}{$2}\, $0
+endsnippet
+
+snippet * "Beautiful cdot" iA
+\cdot $0
 endsnippet
 
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
-\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+\\cfrac{`!p snip.rv = match.group(1)`}{$1}\, $0
 endsnippet
 
 
@@ -63,12 +75,12 @@ while True:
 	if stripped[i] == '(': depth -= 1
 	if depth == 0: break;
 	i -= 1
-snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
-`{$1}$0
+snip.rv = stripped[0:i] + "\\cfrac{" + stripped[i+2:-1] + "}\,"
+`{$1} $0
 endsnippet
 
 snippet sympy "sympy block " w
-sympy $1 sympy$0
+sympy $1 sympy $0
 endsnippet
 
 priority 10000
@@ -87,12 +99,12 @@ snip.rv = eval('latex(' + match.group(1).replace('\\', '') \
 endsnippet
 
 priority 10
-snippet "bar" "bar" riA
-\overline{$1}$0
+snippet "over" "over" riA
+\overline{$1} $0
 endsnippet
 
 priority 100
-snippet "([a-zA-Z])bar" "bar" riA
+snippet "([a-zA-Z])over" "over" riA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
@@ -108,4 +120,18 @@ endsnippet
 
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+
+# THEORPHYS
+snippet "\<(.*?)\|" "bra" riA
+\bra{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
+endsnippet
+
+snippet "\|(.*?)\>" "ket" riA
+\ket{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
+endsnippet
+
+snippet "(.*)\\bra{(.*?)}([^\|]*?)\>" "braket" riA
+`!p snip.rv = match.group(1)`\braket{`!p snip.rv = match.group(2)`}{`!p snip.rv = match.group(3).replace('q', f'\psi').replace('f', f'\phi')`}
 endsnippet

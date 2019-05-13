@@ -33,6 +33,8 @@ Plug 'SirVer/ultisnips'
 let g:UltiSnipsEditSplit="vertical"
 " Snippets themselves
 Plug 'honza/vim-snippets'
+" Fuzzy search
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
 
@@ -94,8 +96,7 @@ set t_vb=
 set tm=500
 
 " Mark the current line on entering insert mode
-"set cursorline
-autocmd InsertEnter,InsertLeave * set cul!
+set cursorline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=>Search Related
