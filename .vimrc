@@ -35,6 +35,15 @@ let g:UltiSnipsEditSplit="vertical"
 Plug 'honza/vim-snippets'
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" ==========================================
+" Vim-airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Enable smart tab inline
+let g:airline#extensions#tabline#enabled = 1
+" Integrate with powerline symbols
+let g:airline_powerline_fonts = 1
+" ==========================================
 
 call plug#end()
 
