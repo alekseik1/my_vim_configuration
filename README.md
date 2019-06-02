@@ -2,6 +2,8 @@
 
 Here you'll find instructions that I followed to obtain my current VIM installations.
 Here are some screenshots:
+![Screenshot_1](https://user-images.githubusercontent.com/11070318/58766917-440b8780-858d-11e9-9b33-dc4a8a91e9f6.png)
+![Screenshot_2](https://user-images.githubusercontent.com/11070318/58766918-4c63c280-858d-11e9-9c55-26027fda7a59.png)
 
 ## Let's deploy!
 Where are several steps you need to follow. Some of them include little hacks (like installation of _Powerline_ fonts)
