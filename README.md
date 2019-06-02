@@ -7,7 +7,8 @@ Here are some screenshots:
 Where are several steps you need to follow. Some of them include little hacks (like installation of _Powerline_ fonts)
 but I'll provide all links to articles that describes such hacks very well.
 
-0. I use `vim-plug` as a plugin manager for VIM. You need to install it first:
+### Install `vim-plug`
+I use `vim-plug` as a plugin manager for VIM. You need to install it first:
 
 `# Vim (~/.vim/autoload)
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -18,6 +19,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 More instructions can be found [here](https://github.com/junegunn/vim-plug/wiki/tutorial).
 
+### `.vimrc` and plugin installation
 1. Copy `.vimrc` from this repo to your `~/.vimrc` (if you are on **Linux** or **MacOS**) 
 or to `${HOME}/.vimrc` (if on **Windows**)
 
