@@ -35,6 +35,7 @@ let g:UltiSnipsEditSplit="vertical"
 Plug 'honza/vim-snippets'
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " ==========================================
 " Vim-airline
 Plug 'vim-airline/vim-airline'
@@ -43,7 +44,62 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
 " Integrate with powerline symbols
 let g:airline_powerline_fonts = 1
+" Set up default theme
+let g:airline_theme='powerlineish'  
 " ==========================================
+" ==========================================
+" Nerd tree -- file explorer
+Plug 'scrooloose/nerdtree'
+map <F3> :NERDTreeToggle<CR>
+" Ignoring files
+let NERDTreeIgnore=['\~$',  '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+" ==========================================
+" Update folding less often
+Plug 'Konfekt/FastFold'
+" nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  []
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+
+let g:markdown_folding = 1
+let g:tex_fold_enabled = 1
+let g:vimsyn_folding = 'af'
+let g:xml_syntax_folding = 1
+let g:javaScript_fold = 1
+let g:sh_fold_enabled= 7
+" ==========================================
+" Python-related stuff
+" ==========================================
+" Folding
+Plug 'tmhedberg/SimpylFold'
+
+" Python with virtualenv support
+py3 << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+" ==========================================
+" YouCompleteMe -- for completion
+Plug 'Valloric/YouCompleteMe'
+" Close completion windows after selection
+let g:ycm_autoclose_preview_window_after_completion=1
+" Map Ctrl+g as 'Go to definition'
+map <C-g>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" YouCompleteMe have conflicts with UltiSnips key trigger
+Plug 'ervandew/supertab'
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 call plug#end()
 
@@ -63,7 +119,6 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -212,4 +267,9 @@ setlocal spell
 set spelllang=en,ru
 " Binding for text fix via <c-l>
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+" Folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 
