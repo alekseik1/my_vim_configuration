@@ -227,6 +227,7 @@ filetype indent on
 "
 " Enable syntax highlighting
 syntax enable
+colorscheme desert
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
