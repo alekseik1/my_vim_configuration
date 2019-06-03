@@ -23,6 +23,10 @@ Where are some cosmetic actions you need to take.
 ## Hacks section
 _These hacks are optional._ In each section, I'll give options how to handle without them if you want.
 
+
+### Install `YouCompleteMe` plugin
+As YCM has compilable component, you need to do some extra work described [here](https://github.com/Valloric/YouCompleteMe#installation)
+
 ### Install `Powerline` fonts. 
 
 If you are running in **WSL** (like me), you should refer to a 
