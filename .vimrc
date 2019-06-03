@@ -26,20 +26,29 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall
 endif
 call plug#begin('~/.vim/plugged')
+
+" Git integration
+Plug 'tpope/vim-fugitive'
+
 " Latex
 Plug 'lervag/vimtex'
+
 " Snippets
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsEditSplit="vertical"
 " Snippets themselves
 Plug 'honza/vim-snippets'
+
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 " ==========================================
 " Vim-airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Do not show `Spell` in airline
+let g:airline_detect_spell=0
 " Enable smart tab inline
 let g:airline#extensions#tabline#enabled = 1
 " Integrate with powerline symbols
@@ -89,13 +98,13 @@ Plug 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
 " Map Ctrl+g as 'Go to definition'
 map <C-g>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " YouCompleteMe have conflicts with UltiSnips key trigger
 Plug 'ervandew/supertab'
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+" ==========================================
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
