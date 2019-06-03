@@ -25,7 +25,9 @@ _These hacks are optional._ In each section, I'll give options how to handle wit
 
 
 ### Install `YouCompleteMe` plugin
-As YCM has compilable component, you need to do some extra work described [here](https://github.com/Valloric/YouCompleteMe#installation)
+As YCM has compilable component, you need to do some extra work described [here](https://github.com/Valloric/YouCompleteMe#installation).
+
+If you don't want to install it, comment whole `YouCompleteMe` section in `.vimrc`
 
 ### Install `Powerline` fonts. 
 
