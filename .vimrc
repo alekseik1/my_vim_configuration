@@ -286,3 +286,11 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
+" For russian language
+"set keymap=russian-jcukenwin
+"set iminsert=0 " по умолчанию для ввода - английская
+"set imsearch=0 " по умолчанию для поиска - английская
+"cmap <silent> <C-F> <C-^>
+"imap <silent> <C-F> <C-^>
+"nmap <silent> <C-F> <C-^>
+"vmap <silent> <C-F> <C-^>
