@@ -7,6 +7,8 @@ set nocompatible
 " Sets how many lines of history VIM has to remember and undolevels
 set history=9999
 set undolevels=9999
+set undofile
+set undodir=~/.vim/undodir
 
 " If you want mouse support
 set mouse=a

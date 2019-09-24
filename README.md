@@ -20,6 +20,12 @@ or to `${HOME}/.vimrc` (if on **Windows**)
 3. Go to [hacks section](#hacks-section) for additional steps.
 Where are some cosmetic actions you need to take.
 
+### Undo history
+We store undo history in special directory `~/.vim/undodir/`. Make sure to create it in advance:
+```bash
+mkdir ~/.vim/undodir/
+```
+
 ## Hacks section
 _These hacks are optional._ In each section, I'll give options how to handle without them if you want.
 
