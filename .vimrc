@@ -232,7 +232,7 @@ filetype indent on
 "
 " Enable syntax highlighting
 syntax enable
-colorscheme desert
+colorscheme elflord
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
