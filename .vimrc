@@ -233,6 +233,7 @@ filetype indent on
 " Enable syntax highlighting
 syntax enable
 colorscheme desert
+hi Search ctermfg=yellow
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
