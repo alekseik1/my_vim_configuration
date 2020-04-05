@@ -279,7 +279,7 @@ let &t_EI.="\e[1 q"
 let &t_SR.="\e[3 q"
 
 " Spell check
-setlocal spell
+" setlocal spell
 set spelllang=en,ru
 " Binding for text fix via <c-l>
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
