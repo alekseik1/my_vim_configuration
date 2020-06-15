@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+	filemode = true
 [user]
     email = 1alekseik1@gmail.com
     name = alekseik1
@@ -28,3 +29,11 @@
 	make-changelog = log --pretty=format:\"- %s\"
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+# Mail.ru creds
+[includeIf "gitdir:/Users/a.kozharin/work"]
+    path = ~/.gitconfig.mailru
