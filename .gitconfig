@@ -35,5 +35,5 @@
 	process = git-lfs filter-process
 	required = true
 # Mail.ru creds
-[includeIf "gitdir:/Users/a.kozharin/work"]
+[includeIf "gitdir:~/work/"]
     path = ~/.gitconfig.mailru
