@@ -34,6 +34,11 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'itkq/fluentd-vim'
 
+" Surround
+Plug 'tpope/vim-surround'
+" Correct repeat for vim-surround
+Plug 'tpope/vim-repeat'
+
 " Latex
 Plug 'lervag/vimtex'
 let g:vimtex_latexmk_enabled=1
@@ -41,6 +46,13 @@ let g:vimtex_latexmk_enabled=1
 " Snippets
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsEditSplit="vertical"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => UltiSnips configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
 " Snippets themselves
 Plug 'honza/vim-snippets'
 
@@ -104,16 +116,12 @@ let g:ycm_autoclose_preview_window_after_completion=1
 " Map Ctrl+g as 'Go to definition'
 map <C-g>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " YouCompleteMe have conflicts with UltiSnips key trigger
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:SuperTabDefaultCompletionType = '<C-n>'
 " ==========================================
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " For fast commenting
 Plug 'tpope/vim-commentary'
@@ -129,13 +137,6 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg' 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => UltiSnips configuration
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -300,3 +301,6 @@ nnoremap <space> za
 "imap <silent> <C-F> <C-^>
 "nmap <silent> <C-F> <C-^>
 "vmap <silent> <C-F> <C-^>
+
+" Part of vim-surround installation
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
