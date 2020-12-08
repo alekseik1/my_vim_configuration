@@ -41,7 +41,8 @@ Plug 'tpope/vim-repeat'
 
 " Latex
 Plug 'lervag/vimtex'
-let g:vimtex_latexmk_enabled=1
+" Deprecated option
+" let g:vimtex_latexmk_enabled=1
 
 " Snippets
 Plug 'SirVer/ultisnips'
