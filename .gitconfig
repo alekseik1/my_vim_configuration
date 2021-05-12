@@ -1,6 +1,7 @@
 [core]
 	editor = vim
 	filemode = true
+	autocrlf = input
 [user]
     email = 1alekseik1@gmail.com
     name = alekseik1
@@ -37,3 +38,5 @@
 # Work creds
 [includeIf "gitdir:~/work/"]
     path = ~/.gitconfig.work
+[http]
+	postBuffer = 157286400
