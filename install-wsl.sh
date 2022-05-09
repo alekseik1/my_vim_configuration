@@ -28,7 +28,7 @@ for FILE in .vimrc .zshrc .ideavimrc .latexmkrc .gitconfig; do
   fi
 done
 # change shell
-chsh -s $(which zsh) $(whoami)
+chsh -s $(which zsh)
 
 # copy vim snippets and dicts
 cp -r "$SCRIPT_DIR/.vim" "$HOME/.vim"
