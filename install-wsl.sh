@@ -24,6 +24,8 @@ for FILE in .vimrc .zshrc .ideavimrc .latexmkrc .gitconfig; do
   fi
   ln -s "$SCRIPT_DIR/$FILE" "$TARGET_PATH"
 done
+# change shell
+sudo chsh -s $(which zsh) $(whoami)
 
 # copy vim snippets and dicts
 cp -r "$SCRIPT_DIR/.vim" "$HOME/.vim"
@@ -36,3 +38,4 @@ if test -f "$TARGET_PATH"; then
 else
   ln -s "$SCRIPT_DIR/.tmux/.tmux.conf" "$TARGET_PATH"
 fi
+
