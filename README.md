@@ -6,6 +6,14 @@ Here are some screenshots:
 ![Screenshot_2](https://user-images.githubusercontent.com/11070318/58766918-4c63c280-858d-11e9-9c55-26027fda7a59.png)
 
 ## Let's deploy!
+On WSL2 execute
+```bash
+bash  install-wsl.sh
+```
+type your password if necessary, **do not** set zsh a default terminal (if oh-my-zsh) asks for it.
+Install [nerd fonts](https://github.com/romkatv/powerlevel10k#manual-font-installation), set them in Windows Terminal, restart shell.
+
+### Old instructions (legacy)
 Where are several steps you need to follow. Some of them include little hacks (like installation of _Powerline_ fonts)
 but I'll provide all links to articles that describes such hacks very well.
 
