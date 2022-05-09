@@ -13,7 +13,7 @@ fi
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # install plugins
-bash -c 'set -a && . $HOME/.zshrc && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
+zsh -c 'set -a && . $HOME/.zshrc && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
 
 # clean .zshrc since using own
 if test -f "$HOME/.zshrc"; then rm $HOME/.zshrc; fi
