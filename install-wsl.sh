@@ -5,7 +5,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 if [ $(awk -F= '/^NAME/{print $2}' /etc/os-release) == '"Ubuntu"' ]; then
   sudo apt update
   sudo apt upgrade -y
-  sudo apt install -y git python-is-python3 tmux python3 python3-dev build-essential vim python3-virtualenv curl wget
+  sudo apt install -y git python-is-python3 tmux python3 python3-dev build-essential vim python3-virtualenv curl wget zsh
 fi
 
 # oh my zsh
