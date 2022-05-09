@@ -20,7 +20,7 @@ zsh -c 'set -a && . $HOME/.zshrc && git clone --depth=1 https://github.com/romka
 if test -f "$HOME/.zshrc"; then rm $HOME/.zshrc; fi
 
 # link rc files
-for FILE in .vimrc .zshrc .ideavimrc .latexmkrc .gitconfig; do
+for FILE in .vimrc .zshrc .ideavimrc .latexmkrc .gitconfig .p10k.zsh; do
   TARGET_PATH="$HOME/$FILE"
   if test -f "$TARGET_PATH"; then
     echo "$TARGET_PATH exists, skipping"
