@@ -23,8 +23,9 @@ for FILE in .vimrc .zshrc .ideavimrc .latexmkrc .gitconfig; do
   TARGET_PATH="$HOME/$FILE"
   if test -f "$TARGET_PATH"; then
     echo "$TARGET_PATH exists, skipping"
+  else
+    ln -s "$SCRIPT_DIR/$FILE" "$TARGET_PATH"
   fi
-  ln -s "$SCRIPT_DIR/$FILE" "$TARGET_PATH"
 done
 # change shell
 sudo chsh -s $(which zsh) $(whoami)
